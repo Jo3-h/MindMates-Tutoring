@@ -1,1 +1,1 @@
-# MindMate-Tutoring
+# MindMates-Tutoring
