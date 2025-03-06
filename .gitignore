@@ -1,0 +1,42 @@
+# Node modules
+node_modules/
+
+# Environment variables file
+.env
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# npm package lock file (you can uncomment this if you want to ignore the lock file)
+# package-lock.json
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Coverage reports (for testing tools)
+coverage/
+
+# Build and distribution folders
+/dist/
+/build/
+
+# Debug folders and IDE files (if using VSCode, for example)
+.vscode/
+.idea/
+
+# Temporary files
+*.swp
+*.bak
+*.tmp
+
+# Sequelize migrations or any database-related files (if you don't want to track migrations)
+/migrations/
+
+# Test coverage files
+/coverage/
+
+# Custom application logs
+*.log
