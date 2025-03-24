@@ -20,9 +20,9 @@ app.use((err, req, res, next) => {
 });
 
 // Routes
-//const userRoutes = require("./routes/userRoutes");
+const userRoutes = require("./routes/userRoutes");
 //const adminRoutes = require(".routes/adminRoutes");
-//app.use("api/users", userRoutes);
+app.use("/api/users", userRoutes);
 //app.use("api/admin", adminRoutes);
 
 module.exports = app;
