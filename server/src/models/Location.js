@@ -27,6 +27,7 @@ const Location = sequelize.define(
     },
   },
   {
+    tableName: "locations",
     timestamps: false,
   }
 );

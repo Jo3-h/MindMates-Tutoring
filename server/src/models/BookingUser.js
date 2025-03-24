@@ -26,6 +26,7 @@ const BookingUser = sequelize.define(
     },
   },
   {
+    tableName: "booking_users",
     timestamps: false,
   }
 );

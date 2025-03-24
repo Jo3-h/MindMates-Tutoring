@@ -41,6 +41,7 @@ const Availability = sequelize.define(
     },
   },
   {
+    tableName: "availability",
     timestamps: false,
   }
 );

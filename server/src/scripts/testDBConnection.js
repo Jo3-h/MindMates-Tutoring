@@ -15,21 +15,30 @@ const connection_details = {
   },
 };
 
-console.log("🔌 Testing database connection...");
-console.log("🔌 Connection details:", connection_details);
 logger.info("Testing database connection...");
 
 const client = new Client(connection_details);
 
 const testDBConnection = async () => {
+  // Define a timeout for the connection
+  const timeout = 5000;
+  const timeoutPromise = new Promise((_, reject) =>
+    setTimeout(() => reject(new Error("Connection timeout")), timeout)
+  );
+
   try {
-    await client.connect();
+    await Promise.race([client.connect(), timeoutPromise]);
     logger.info("Connected to the database successfully!");
   } catch (error) {
-    logger.error("Error connecting to the database");
-    logger.error(error);
+    if (error.message === "Connection timeout") {
+      logger.error("Error: Database connection timed out");
+    } else {
+      logger.error("Error connecting to the database");
+      logger.error(error);
+    }
   } finally {
     await client.end();
+    logger.info("Connection to the database has been closed.");
   }
 };
 
